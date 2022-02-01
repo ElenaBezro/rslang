@@ -1,0 +1,11 @@
+{
+  "HEADER": {
+    "LOGIN": "Login"
+  },
+  "HOME": {
+    "TITLE": "Home Page"
+  },
+  "COMMON": {
+    "IMAGE_NOT_FOUND": "Image Not Found :("
+  }
+}
