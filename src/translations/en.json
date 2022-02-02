@@ -5,7 +5,22 @@
   "HOME": {
     "TITLE": "Home Page"
   },
+  "LOGIN_DIALOG": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REGISTER_PROMPT": "Not registered yet?",
+    "REGISTER": "Create an account!"
+  },
   "COMMON": {
-    "IMAGE_NOT_FOUND": "Image Not Found :("
+    "IMAGE_NOT_FOUND": "Image Not Found :(",
+    "BUTTONS": {
+      "OK": "Ok",
+      "CANCEL": "Cancel",
+      "REGISTER": "Register"
+    }
+  },
+  "ERRORS": {
+    "AUTH_FAILED": "Authentification failed: could not find a user with provided email and password"
   }
 }

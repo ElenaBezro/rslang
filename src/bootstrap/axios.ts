@@ -9,4 +9,5 @@ axios.interceptors.response.use(undefined, (error) => {
     // redirect user to home page when not signed in
     history.replaceState(undefined, '', pages.HOME);
   }
+  throw error;
 });
