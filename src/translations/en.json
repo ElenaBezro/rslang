@@ -5,12 +5,21 @@
   "HOME": {
     "TITLE": "Home Page"
   },
-  "LOGIN_DIALOG": {
+  "AUTH": {
     "TITLE": "Login",
     "EMAIL": "Email",
     "PASSWORD": "Password",
     "REGISTER_PROMPT": "Not registered yet?",
     "REGISTER": "Create an account!"
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "EMAIL": "Email",
+    "NAME": "Name",
+    "PASSWORD": "Password",
+    "MIN_PASSWORD_LENGTH": "Password should be at least 8 characters long",
+    "AUTHENTICATE_PROMPT": "Already registered?",
+    "AUTHENTICATE": "Login"
   },
   "COMMON": {
     "IMAGE_NOT_FOUND": "Image Not Found :(",
@@ -25,6 +34,7 @@
     }
   },
   "ERRORS": {
-    "AUTH_FAILED": "Authentification failed: could not find a user with provided email and password"
+    "AUTH_FAILED": "Authentification failed: could not find a user with provided email and password",
+    "REGISTER_FAILED": "Ooops, Registration failed :("
   }
 }
