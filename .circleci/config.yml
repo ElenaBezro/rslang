@@ -5,7 +5,7 @@ version: 2.1
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
 # See: https://circleci.com/docs/2.0/orb-intro/
 orbs:
-  jest: blimmer/jest@1.0.0
+  node: circleci/node@5.0.0
   # The heroku orb contains a set of prepackaged CircleCI configuration you can utilize to deploy applications to heroku
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/heroku
@@ -13,19 +13,33 @@ orbs:
   # See here https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project
   heroku: circleci/heroku@1.2
 
+jobs:
+  install-node:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          node-version: '16.13.0'
+      - run: node --version
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
   # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  sample:
+  test-and-deploy:
     jobs:
-      - jest/test
+      - install-node
+      - node/run:
+          npm-run: test
+          requires:
+            - install-node
       - heroku/deploy-via-git:
           # this parameter instructs the push to use a force flag when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
           force: true
           requires:
-            - jest/test # only run deploy-via-git job if the build job has completed
+            - node/run # only run deploy-via-git job if the build job has completed
           filters:
             branches:
               only: develop
+  
