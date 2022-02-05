@@ -4,30 +4,30 @@ import { Box, Dialog, DialogContent, Link, Typography } from '@mui/material';
 
 import { useAppContext } from '~/contexts';
 
-import { AuthDialogProps } from './AuthDialog.types';
-import { AuthForm, FormValues } from './AuthForm';
+import { RegisterDialogProps } from './RegisterDialog.types';
+import { FormValues, RegisterForm } from './RegisterForm';
 
-const AuthDialog = ({ open, onClose, onRequestRegistration }: AuthDialogProps) => {
+const RegisterDialog = ({ open, onClose, onRequestAuthorization }: RegisterDialogProps) => {
   const { t } = useTranslation();
 
-  const { authenticate, isAuthenticating } = useAppContext();
+  const { register, isRegistering } = useAppContext();
 
-  const onSubmit = (values: FormValues) => authenticate(values).then(onClose);
+  const onSubmit = (values: FormValues) => register(values).then(onClose);
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
       <DialogContent>
         <Typography variant="h5" align="center">
-          {t('AUTH.TITLE')}
+          {t('REGISTER.TITLE')}
         </Typography>
-        <AuthForm onSubmit={onSubmit} loading={isAuthenticating} />
+        <RegisterForm onSubmit={onSubmit} loading={isRegistering} />
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Typography variant="body2" sx={{ textTransform: 'none', mr: 1 }}>
-            {t('AUTH.REGISTER_PROMPT')}
+            {t('REGISTER.AUTHENTICATE_PROMPT')}
           </Typography>
-          <Link href="javascript:;" onClick={onRequestRegistration}>
+          <Link href="javascript:;" onClick={onRequestAuthorization}>
             <Typography variant="subtitle2" sx={{ textTransform: 'none' }}>
-              {t('AUTH.REGISTER')}
+              {t('REGISTER.AUTHENTICATE')}
             </Typography>
           </Link>
         </Box>
@@ -36,4 +36,4 @@ const AuthDialog = ({ open, onClose, onRequestRegistration }: AuthDialogProps) =
   );
 };
 
-export { AuthDialog };
+export { RegisterDialog };
