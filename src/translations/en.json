@@ -18,6 +18,10 @@
       "OK": "Ok",
       "CANCEL": "Cancel",
       "REGISTER": "Register"
+    },
+    "FORMS": {
+      "FIELD_IS_REQUIRED": "Field is required",
+      "INVALID_EMAIL": "Not a valid email"
     }
   },
   "ERRORS": {

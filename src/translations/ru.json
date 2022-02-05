@@ -18,6 +18,10 @@
       "OK": "Ок",
       "CANCEL": "Отмена",
       "REGISTER": "Зарегистрироваться"
+    },
+    "FORMS": {
+      "FIELD_IS_REQUIRED": "Обязательное поле",
+      "INVALID_EMAIL": "Некорректный адрес"
     }
   },
   "ERRORS": {
