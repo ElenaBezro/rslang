@@ -3,7 +3,14 @@
   "trailingComma": "es5",
   "singleQuote": true,
   "semi": true,
-  "importOrder": ["^react(.*)$", "<THIRD_PARTY_MODULES>", "^~", "^[./]+.*(?<!\\.[s]?css)$", "^[./]+.*(\\.[s]?css)$"],
+  "importOrder": [
+    "^react(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "test-utils",
+    "^~",
+    "^[./]+.*(?<!\\.[s]?css)$",
+    "^[./]+.*(\\.[s]?css)$"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

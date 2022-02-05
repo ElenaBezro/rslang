@@ -5,6 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { SnackbarProvider } from 'notistack';
 
+import '~/bootstrap';
+
 import { App } from './App';
 
 import './index.css';

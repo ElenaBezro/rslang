@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router';
 
-import '~/bootstrap';
 import { Header } from '~/components/Header';
 import { AppContextProvider } from '~/contexts/App.context';
 import { Home, pages } from '~/pages/home';
