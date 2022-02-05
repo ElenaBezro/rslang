@@ -25,7 +25,7 @@ const RegisterDialog = ({ open, onClose, onRequestAuthorization }: RegisterDialo
           <Typography variant="body2" sx={{ textTransform: 'none', mr: 1 }}>
             {t('REGISTER.AUTHENTICATE_PROMPT')}
           </Typography>
-          <Link href="javascript:;" onClick={onRequestAuthorization}>
+          <Link onClick={onRequestAuthorization} sx={{ cursor: 'pointer' }}>
             <Typography variant="subtitle2" sx={{ textTransform: 'none' }}>
               {t('REGISTER.AUTHENTICATE')}
             </Typography>

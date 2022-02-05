@@ -25,7 +25,7 @@ const AuthDialog = ({ open, onClose, onRequestRegistration }: AuthDialogProps) =
           <Typography variant="body2" sx={{ textTransform: 'none', mr: 1 }}>
             {t('AUTH.REGISTER_PROMPT')}
           </Typography>
-          <Link href="javascript:;" onClick={onRequestRegistration}>
+          <Link onClick={onRequestRegistration} sx={{ cursor: 'pointer' }}>
             <Typography variant="subtitle2" sx={{ textTransform: 'none' }}>
               {t('AUTH.REGISTER')}
             </Typography>
