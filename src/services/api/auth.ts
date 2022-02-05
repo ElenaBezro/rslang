@@ -10,9 +10,9 @@ type AuthResponse = {
 }
 
 const signIn = (credentials: { email: string; password: string }) => axios.post<AuthResponse>('/signin', credentials).then(response => {
-  const { userId: id, name } = response.data;
+  const { userId: id, name, token, refreshToken } = response.data;
   const user: User = { ...credentials, name, id };
-  return user;
+  return [user, token, refreshToken] as const;
 });
 
 export { signIn };
