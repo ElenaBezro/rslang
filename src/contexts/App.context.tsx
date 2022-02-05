@@ -1,9 +1,10 @@
-import { ReactNode, createContext, useCallback, useContext, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useSnackbar } from 'notistack';
 
-import { useApi } from '~/hooks';
+import { LOCAL_STORAGE } from '~/config';
+import { useApi, useLocalStorage } from '~/hooks';
 import { createUser, signIn } from '~/services/api';
 import { User } from '~/types';
 
@@ -20,7 +21,9 @@ const AppContext = createContext({} as AppContextShape);
 const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation();
 
-  const [user, setUser] = useState<User | undefined>();
+  const [user, setUser] = useLocalStorage<User | undefined>(LOCAL_STORAGE.USER, undefined);
+  const [, setToken] = useLocalStorage(LOCAL_STORAGE.TOKEN, '');
+  const [, setRefreshToken] = useLocalStorage(LOCAL_STORAGE.REFRESH_TOKEN, '');
 
   const [sendAuthRequest, { isLoading: isAuthenticating }] = useApi(signIn);
 
@@ -31,15 +34,18 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const authenticate = useCallback<typeof sendAuthRequest>(
     (payload) =>
       sendAuthRequest(payload)
-        .then((user) => {
+        .then((response) => {
+          const [user, token, refreshToken] = response;
           setUser(user);
-          return user;
+          setToken(token);
+          setRefreshToken(refreshToken);
+          return response;
         })
         .catch((error) => {
           enqueueSnackbar(t('ERRORS.AUTH_FAILED'));
           throw error;
         }),
-    [enqueueSnackbar, sendAuthRequest, t]
+    [t, enqueueSnackbar, sendAuthRequest, setRefreshToken, setToken, setUser]
   );
 
   const register = useCallback<typeof sendRegisterRequest>(
