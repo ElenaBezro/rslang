@@ -21,5 +21,6 @@
       "~/*": ["*"],
       "test-utils": ["utils/test-utils"]
     }
-  }
+  },
+  "include": ["./src"]
 }
