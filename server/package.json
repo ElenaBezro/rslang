@@ -10,6 +10,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
+    "stop": "node src/server.stop.js",
     "start:dev": "nodemon src/server.js",
     "lint": "eslint ./ --ignore-path .gitignore --fix",
     "heroku-postbuild": "npm install --only=dev"
@@ -54,6 +55,8 @@
     "morgan": "^1.10.0",
     "npm": "^6.14.11",
     "rslang": "file:..",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1",
     "swagger-ui-express": "4.1.2",
     "uuid": "3.3.3",
     "winston": "^3.2.1",
