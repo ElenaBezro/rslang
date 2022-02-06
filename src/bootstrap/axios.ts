@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { LOCAL_STORAGE } from '~/config';
+import { LOCAL_STORAGE, SERVER_URL } from '~/config';
 
-import { pages } from '~/pages/home';
+import { pages } from '~/pages';
 
-axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL as string;
+axios.defaults.baseURL = SERVER_URL;
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem(LOCAL_STORAGE.TOKEN);
