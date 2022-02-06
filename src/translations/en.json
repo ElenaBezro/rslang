@@ -1,9 +1,13 @@
 {
   "HEADER": {
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "DICTIONARY": "Dictionary"
   },
   "HOME": {
     "TITLE": "Home Page"
+  },
+  "DICTIONARY": {
+    "TITLE": "Dictionary Page"
   },
   "AUTH": {
     "TITLE": "Login",

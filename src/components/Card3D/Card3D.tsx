@@ -21,10 +21,10 @@ const Card3D = ({ style, children, ...other }: PaperProps) => {
   const onMouseMove: MouseEventHandler<HTMLDivElement> = useCallback((e) => {
     if (boxRef.current) {
       const paperRect = boxRef.current.getBoundingClientRect();
-      const xOffset = paperRect.width / 2 - e.pageX;
-      const x = Math.sign(xOffset) * Math.min(1, Math.abs(xOffset) / paperRect.width / 10);
+      const xOffset = paperRect.left + paperRect.width / 2 - e.clientX;
+      const x = -Math.sign(xOffset) * Math.min(1, Math.abs(xOffset) / paperRect.width / 10);
 
-      const yOffset = paperRect.height / 2 - e.pageY;
+      const yOffset = paperRect.top + paperRect.height / 2 - e.clientY;
       const y = Math.sign(yOffset) * Math.min(1, Math.abs(yOffset) / paperRect.height / 10);
       setTransform({ x, y });
     }

@@ -1,9 +1,13 @@
 {
   "HEADER": {
-    "LOGIN": "Войти"
+    "LOGIN": "Войти",
+    "DICTIONARY": "Словарь"
   },
   "HOME": {
     "TITLE": "Домашняя страница"
+  },
+  "DICTIONARY": {
+    "TITLE": "Словарь"
   },
   "AUTH": {
     "TITLE": "Авторизация",

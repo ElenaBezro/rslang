@@ -10,10 +10,10 @@ const reducer = <T>(previousState: UseApiState<T>, action: UseApiAction<T>) => {
       return { ...previousState, isLoading: true, error: undefined };
 
     case 'done':
-      return { isLoading: false, data: action.response };
+      return { isLoading: false, response: action.response };
 
     case 'error':
-      return { isLoading: false, data: undefined, error: action.error };
+      return { isLoading: false, response: undefined, error: action.error };
   }
 };
 

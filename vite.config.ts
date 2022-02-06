@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import eslintPlugin from 'vite-plugin-eslint';
+// import eslintPlugin from 'vite-plugin-eslint';
 
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react(), eslintPlugin()],
+  plugins: [react()/* , eslintPlugin() */],
   resolve: {
     alias: {
       '~': path.resolve(__dirname, 'src'),
@@ -14,5 +14,10 @@ export default defineConfig({
   build: {
     outDir: 'server/public',
     sourcemap: true
+  },
+  server: {
+    hmr: {
+      overlay: false
+    }
   }
 });
