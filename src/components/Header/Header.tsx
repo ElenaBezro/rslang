@@ -36,11 +36,9 @@ const Header = () => {
         <IconButton size="large" color="inherit" component={Link} to={pages.HOME} sx={{ mr: 2 }}>
           <HomeIcon />
         </IconButton>
-        {user && (
-          <Button component={Link} to={pages.DICTIONARY} color="inherit">
-            {t('HEADER.DICTIONARY')}
-          </Button>
-        )}
+        <Button component={Link} to={pages.DICTIONARY} color="inherit">
+          {t('HEADER.DICTIONARY')}
+        </Button>
         <Box flex="1" />
         {user ? (
           <Box sx={{ display: 'flex', columnGap: 1 }}>
