@@ -1,10 +1,12 @@
 import { MouseEventHandler, useCallback, useMemo, useRef, useState } from 'react';
 
-import { Box, Paper, PaperProps } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 
-const BACKDROP_SIZE = 50;
+import { Card3DProps } from './Card3D.types';
 
-const Card3D = ({ style, children, ...other }: PaperProps) => {
+const DEFAULT_BACKDROP_SIZE = 30;
+
+const Card3D = ({ style, children, backdropSize = DEFAULT_BACKDROP_SIZE, ...other }: Card3DProps) => {
   const boxRef = useRef<HTMLDivElement>(null);
 
   const [transform, setTransform] = useState({ x: 0, y: 0 });
@@ -13,7 +15,7 @@ const Card3D = ({ style, children, ...other }: PaperProps) => {
     () => ({
       style,
       transition: 'transform 200ms',
-      transform: `perspective(300px) rotate3d(${transform.y}, ${transform.x}, 0, 5deg)`,
+      transform: `perspective(400px) rotate3d(${transform.y}, ${transform.x}, 0, 3deg)`,
     }),
     [style, transform]
   );
@@ -35,16 +37,15 @@ const Card3D = ({ style, children, ...other }: PaperProps) => {
   }, []);
 
   return (
-    <Paper style={mergedStyle} {...other}>
+    <Paper style={mergedStyle} {...other} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
       <Box
         ref={boxRef}
         position="absolute"
-        left={-BACKDROP_SIZE}
-        top={-BACKDROP_SIZE}
-        bottom={-BACKDROP_SIZE}
-        right={-BACKDROP_SIZE}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
+        left={-backdropSize}
+        top={-backdropSize}
+        bottom={-backdropSize}
+        right={-backdropSize}
+        zIndex={-1}
       />
       {children}
     </Paper>

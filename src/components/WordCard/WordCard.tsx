@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material';
 
 import { Card3D } from '../Card3D';
 import { Image } from '../Image';
+import { PlayAudioIconButton } from '../PlayAudioIconButton';
 import { WordCardProps } from './WordCard.types';
 
 const WordCard = ({ word }: WordCardProps) => {
@@ -34,14 +35,17 @@ const WordCard = ({ word }: WordCardProps) => {
 
   return (
     <Card3D sx={{ padding: 2 }} elevation={3}>
-      <Box ref={boxRef} display="flex" flexDirection="column">
+      <Box ref={boxRef} display="grid" flexDirection="column">
         <Image src={word.image} width={size.width} ratio={0.8} />
-        <Typography variant="subtitle1" align="center" mt={1}>
-          {word.word}
-        </Typography>
-        <Typography variant="subtitle2" align="center">
-          {word.transcription}
-        </Typography>
+        <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap" mt={1}>
+          <Typography variant="h6" textTransform="capitalize">
+            {word.word}
+          </Typography>
+          <Typography variant="h6" ml={1}>
+            {word.transcription}
+          </Typography>
+          <PlayAudioIconButton src={word.audio} />
+        </Box>
         <Typography variant="body2" mt={1} minHeight={40} textAlign="center">
           <span dangerouslySetInnerHTML={{ __html: word.textExample }} />
         </Typography>

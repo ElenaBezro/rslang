@@ -47,7 +47,7 @@ db.on('error', () => logger.error('MongoDB connection error:')).once(
 );
 
 const loadDefaultWordsIfNeeded = () => {
-  getAll({ group: 0, page: 0 }).then(words => {
+  getAll({ group: 0, page: 0 }).then(async words => {
     if (!words.length) {
       logger.info('No words in the dictionary, loading default words...');
 
