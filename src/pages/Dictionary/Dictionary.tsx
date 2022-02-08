@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 
 // import { useTranslation } from 'react-i18next';
-import { CircularProgress, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 
 import { WordCard } from '~/components/WordCard';
+import { PAGES_PER_GROUP_COUNT } from '~/config';
 import { useApi } from '~/hooks';
 import { getWords } from '~/services/api';
+
+const SKELETON_DATA = new Array<undefined>(PAGES_PER_GROUP_COUNT).fill(undefined);
 
 const Dictionary = () => {
   const [group] = useState(0);
@@ -19,12 +22,11 @@ const Dictionary = () => {
 
   return (
     <Grid container p={2} spacing={4} overflow="hidden">
-      {words?.data.map((word) => (
-        <Grid key={word.id} item xs={12} sm={6} md={4} lg={3}>
+      {(isLoading ? SKELETON_DATA : words?.data || []).map((word, index) => (
+        <Grid key={word?.id ?? index} item xs={12} sm={6} md={4} lg={3}>
           <WordCard word={word} />
         </Grid>
       ))}
-      {isLoading && <CircularProgress />}
     </Grid>
   );
 };

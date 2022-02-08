@@ -1,7 +1,7 @@
 import { Word } from '~/types';
 
 type WordCardProps = {
-  word: Word;
+  word?: Word;
 }
 
 export type { WordCardProps };

@@ -7,7 +7,7 @@ const LOCAL_STORAGE = {
 };
 
 const GROUP_COUNT = 6;
-const PAGES_PER_GROUP_COUNT = 30;
+const PAGES_PER_GROUP_COUNT = 20;
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL as string;
 

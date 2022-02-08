@@ -37,3 +37,5 @@ export const Boat = Template.bind({});
 Boat.args = {
   word: boat,
 };
+
+export const Loading = Template.bind({});
