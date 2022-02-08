@@ -9,9 +9,16 @@ export default {
 
 const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />;
 
-export const Example1 = Template.bind({});
-Example1.args = {
+export const Example = Template.bind({});
+Example.args = {
   width: 320,
   height: 200,
-  src: 'http://localhost:5000/files/01_0001.jpg',
+  src: 'files/01_0001.jpg',
+};
+
+export const ImageNotFound = Template.bind({});
+ImageNotFound.args = {
+  width: 320,
+  height: 200,
+  src: 'dummy.jpg',
 };

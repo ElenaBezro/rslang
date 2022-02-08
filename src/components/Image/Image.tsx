@@ -35,7 +35,7 @@ const Image = ({ src, width, ...boxProps }: ImageProps) => {
     <Box display="flex" borderRadius={1} width={width} height={computedHeight} {...boxProps}>
       {isLoading && <Skeleton variant="rectangular" width={width} height={computedHeight} />}
       {!isLoading && isLoadingFailed && (
-        <Typography variant="h3" textAlign="center">
+        <Typography variant="h4" textAlign="center" sx={{ wordBreak: 'break-word' }}>
           {t('COMMON.IMAGE_NOT_FOUND')}
         </Typography>
       )}

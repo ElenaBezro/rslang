@@ -30,7 +30,9 @@
     "BUTTONS": {
       "OK": "Ok",
       "CANCEL": "Cancel",
-      "REGISTER": "Register"
+      "REGISTER": "Register",
+      "PLAY": "Play",
+      "STOP": "Stop"
     },
     "FORMS": {
       "FIELD_IS_REQUIRED": "Field is required",

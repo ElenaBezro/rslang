@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Word } from '~/types';
@@ -9,15 +10,19 @@ export default {
   component: WordCard,
 } as ComponentMeta<typeof WordCard>;
 
-const Template: ComponentStory<typeof WordCard> = (args) => <WordCard {...args} />;
+const Template: ComponentStory<typeof WordCard> = (args) => (
+  <Box width={300} height={200}>
+    <WordCard {...args} />
+  </Box>
+);
 
 const boat: Word = {
   id: '5e9f5ee35eb9e72bc21af4a2',
   group: 0,
   page: 0,
   word: 'boat',
-  image: 'http://localhost:5000/files/01_0005.jpg',
-  audio: 'http://localhost:5000/files/01_0005.mp3',
+  image: 'files/01_0005.jpg',
+  audio: 'files/01_0005.mp3',
   audioMeaning: 'files/01_0005_meaning.mp3',
   audioExample: 'files/01_0005_example.mp3',
   textMeaning: 'A <i>boat</i> is a vehicle that moves across water.',
