@@ -36,7 +36,11 @@ const PlayAudioIconButton = ({ src, onPlay, onStop, iconProps, buttonProps }: Pl
     };
 
     audio.addEventListener('ended', onEnded);
-    return () => audio.removeEventListener('ended', onEnded);
+
+    return () => {
+      audio.removeEventListener('ended', onEnded);
+      audio.pause();
+    };
   }, [audio, off, onStop]);
 
   const onClick = isPlaying ? stopAudio : playAudio;
