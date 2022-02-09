@@ -1,6 +1,8 @@
+import { BASE_URL } from '~/config';
+
 const pages = {
-  HOME: '/',
-  DICTIONARY: '/dictionary'
+  HOME: `${BASE_URL}`,
+  DICTIONARY: `${BASE_URL}dictionary`
 };
 
 export { pages };
