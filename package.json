@@ -67,7 +67,7 @@
     "global-jsdom": "^8.4.0",
     "gsap": "^3.9.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.4.7",
+    "jest": "^27.5.1",
     "jsdom": "^19.0.0",
     "prettier": "2.5.1",
     "ts-jest": "^27.1.3",
