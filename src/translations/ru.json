@@ -1,7 +1,8 @@
 {
   "HEADER": {
     "LOGIN": "Войти",
-    "DICTIONARY": "Словарь"
+    "DICTIONARY": "Словарь",
+    "SPRINT": "Спринт"
   },
   "HOME": {
     "TITLE": "Домашняя страница"
@@ -25,14 +26,27 @@
     "AUTHENTICATE_PROMPT": "Уже зарегистрировались?",
     "AUTHENTICATE": "Войти!"
   },
+  "SPRINT": {
+    "TITLE": "Игра \"Спринт\""
+  },
+  "LEVEL_SELECTION": {
+    "SELECT_LEVEL": "Выберите уровень"
+  },
+  "GAME_STATISTICS": {
+    "CORRECT_WORDS": "Правильные ответы",
+    "INCORRECT_WORDS": "Неправильные ответы"
+  },
   "COMMON": {
     "IMAGE_NOT_FOUND": "Картинка не найдена :(",
     "BUTTONS": {
       "OK": "Ок",
       "CANCEL": "Отмена",
+      "YES": "Да",
+      "NO": "Нет",
       "REGISTER": "Зарегистрироваться",
       "PLAY": "Проиграть",
-      "STOP": "Остановить"
+      "STOP": "Остановить",
+      "PLAY_AGAIN": "Сыграем еще разок?"
     },
     "FORMS": {
       "FIELD_IS_REQUIRED": "Обязательное поле",

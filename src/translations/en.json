@@ -1,7 +1,8 @@
 {
   "HEADER": {
     "LOGIN": "Login",
-    "DICTIONARY": "Dictionary"
+    "DICTIONARY": "Dictionary",
+    "SPRINT": "Sprint"
   },
   "HOME": {
     "TITLE": "Home Page"
@@ -25,14 +26,27 @@
     "AUTHENTICATE_PROMPT": "Already registered?",
     "AUTHENTICATE": "Login"
   },
+  "SPRINT": {
+    "TITLE": "\"Sprint\" Game"
+  },
+  "LEVEL_SELECTION": {
+    "SELECT_LEVEL": "Select level"
+  },
+  "GAME_STATISTICS": {
+    "CORRECT_WORDS": "Correct answers",
+    "INCORRECT_WORDS": "Incorrect answers"
+  },
   "COMMON": {
     "IMAGE_NOT_FOUND": "Image Not Found :(",
     "BUTTONS": {
       "OK": "Ok",
       "CANCEL": "Cancel",
+      "YES": "Yes",
+      "NO": "No",
       "REGISTER": "Register",
       "PLAY": "Play",
-      "STOP": "Stop"
+      "STOP": "Stop",
+      "PLAY_AGAIN": "Play again?"
     },
     "FORMS": {
       "FIELD_IS_REQUIRED": "Field is required",

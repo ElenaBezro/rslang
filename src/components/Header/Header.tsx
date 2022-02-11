@@ -8,7 +8,7 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/mater
 import { AuthDialog } from '~/components/AuthDialog';
 import { useAppContext } from '~/contexts';
 import { useBoolean } from '~/hooks/useBoolean';
-import { pages } from '~/pages';
+import { PAGES } from '~/pages';
 
 import { RegisterDialog } from '../RegisterDialog';
 
@@ -33,11 +33,14 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton size="large" color="inherit" component={Link} to={pages.HOME} sx={{ mr: 2 }}>
+        <IconButton size="large" color="inherit" component={Link} to={PAGES.HOME} sx={{ mr: 2 }}>
           <HomeIcon />
         </IconButton>
-        <Button component={Link} to={pages.DICTIONARY} color="inherit">
+        <Button component={Link} to={PAGES.DICTIONARY} color="inherit">
           {t('HEADER.DICTIONARY')}
+        </Button>
+        <Button component={Link} to={PAGES.SPRINT} color="inherit">
+          {t('HEADER.SPRINT')}
         </Button>
         <Box flex="1" />
         {user ? (

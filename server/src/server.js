@@ -50,16 +50,17 @@ const loadDefaultWordsIfNeeded = () => {
   getAll({ group: 0, page: 0 }).then(async words => {
     if (!words.length) {
       logger.info('No words in the dictionary, loading default words...');
-
-      Word.create(
-        defaultWords.map(({ _id, ...word }) => ({ ...word, id: _id.$oid }))
-      )
-        .then(() => {
-          logger.info('Default words have been loaded');
-        })
-        .catch(error => {
-          logger.error('Failed to load default words', error);
-        });
+      Word.deleteMany({}).then(() => {
+        Word.create(
+          defaultWords.map(({ _id, ...word }) => ({ ...word, id: _id.$oid }))
+        )
+          .then(() => {
+            logger.info('Default words have been loaded');
+          })
+          .catch(error => {
+            logger.error('Failed to load default words', error);
+          });
+      });
     }
   });
 };

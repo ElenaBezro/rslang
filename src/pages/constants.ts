@@ -1,8 +1,9 @@
 import { BASE_URL } from '~/config';
 
-const pages = {
+const PAGES = {
   HOME: `${BASE_URL}`,
-  DICTIONARY: `${BASE_URL}dictionary`
+  DICTIONARY: `${BASE_URL}dictionary`,
+  SPRINT: `${BASE_URL}sprint`
 };
 
-export { pages };
+export { PAGES };
