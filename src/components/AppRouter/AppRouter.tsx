@@ -1,12 +1,16 @@
 import { Route, Routes } from 'react-router';
 
-import { Dictionary, Home, pages } from '~/pages';
+import { QueryParamProvider } from '~/components/QueryProvider';
+import { Dictionary, Home, PAGES, Sprint } from '~/pages';
 
 const AppRouter = () => (
-  <Routes>
-    <Route path={pages.HOME} element={<Home />} />
-    <Route path={pages.DICTIONARY} element={<Dictionary />} />
-  </Routes>
+  <QueryParamProvider>
+    <Routes>
+      <Route path={PAGES.HOME} element={<Home />} />
+      <Route path={PAGES.DICTIONARY} element={<Dictionary />} />
+      <Route path={PAGES.SPRINT} element={<Sprint />} />
+    </Routes>
+  </QueryParamProvider>
 );
 
 export { AppRouter };

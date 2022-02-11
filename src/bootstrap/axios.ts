@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { LOCAL_STORAGE, SERVER_URL } from '~/config';
 
-import { pages } from '~/pages';
+import { PAGES } from '~/pages';
 
 axios.defaults.baseURL = SERVER_URL;
 
@@ -17,7 +17,7 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use(undefined, (error) => {
   if (error.status === 401) {
     // redirect user to home page when not signed in
-    history.replaceState(undefined, '', pages.HOME);
+    history.replaceState(undefined, '', PAGES.HOME);
   }
   throw error;
 });
