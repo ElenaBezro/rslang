@@ -35,8 +35,8 @@ const Sprint = () => {
   );
 
   return (
-    <Container sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Typography variant="h3" align="center">
+    <Container sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', overflow: 'visible' }}>
+      <Typography variant="h3" align="center" mt={3} mb={3}>
         {t('SPRINT.TITLE')}
       </Typography>
       <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 300, mb: 10 }}>
