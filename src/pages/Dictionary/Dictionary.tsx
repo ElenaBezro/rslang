@@ -23,7 +23,7 @@ const Dictionary = () => {
 
   return (
     <>
-      <Grid container p={2} spacing={4} overflow="hidden">
+      <Grid container p={2} spacing={4} sx={{ overflowX: 'hidden' }}>
         {(isLoading ? SKELETON_DATA : words?.data || []).map((word, index) => (
           <Grid key={word?.id ?? index} item xs={12} sm={6} md={4} lg={3}>
             <WordCard word={word} />
