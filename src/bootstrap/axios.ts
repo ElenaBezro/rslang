@@ -2,11 +2,12 @@ import axios from 'axios';
 import { LOCAL_STORAGE, SERVER_URL } from '~/config';
 
 import { PAGES } from '~/pages';
+import { getLocalStorageValue } from '~/utils/localStorage';
 
 axios.defaults.baseURL = SERVER_URL;
 
 axios.interceptors.request.use((config) => {
-  const token = localStorage.getItem(LOCAL_STORAGE.TOKEN);
+  const token = getLocalStorageValue(LOCAL_STORAGE.TOKEN, null);
   if (token) {
     config.headers ||= {};
     config.headers.Authorization = `Bearer ${token}`;

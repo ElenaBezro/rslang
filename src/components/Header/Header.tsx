@@ -42,6 +42,11 @@ const Header = () => {
         <Button component={Link} to={PAGES.SPRINT} color="inherit">
           {t('HEADER.SPRINT')}
         </Button>
+        {user && (
+          <Button component={Link} to={PAGES.STATISTICS} color="inherit">
+            {t('HEADER.STATISTICS')}
+          </Button>
+        )}
         <Box flex="1" />
         {user ? (
           <Box sx={{ display: 'flex', columnGap: 1 }}>

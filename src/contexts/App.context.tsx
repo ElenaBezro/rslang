@@ -12,6 +12,7 @@ type AppContextShape = {
   user?: User;
   authenticate: typeof signIn;
   register: typeof createUser;
+  logoff: () => void;
   isAuthenticating: boolean;
   isRegistering: boolean;
 };
@@ -22,8 +23,8 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation();
 
   const [user, setUser] = useLocalStorage<User | undefined>(LOCAL_STORAGE.USER, undefined);
-  const [, setToken] = useLocalStorage(LOCAL_STORAGE.TOKEN, '');
-  const [, setRefreshToken] = useLocalStorage(LOCAL_STORAGE.REFRESH_TOKEN, '');
+  const [, setToken] = useLocalStorage<string | undefined>(LOCAL_STORAGE.TOKEN, undefined);
+  const [, setRefreshToken] = useLocalStorage<string | undefined>(LOCAL_STORAGE.REFRESH_TOKEN, undefined);
 
   const [sendAuthRequest, { isLoading: isAuthenticating }] = useApi(signIn);
 
@@ -62,8 +63,14 @@ const AppContextProvider = ({ children }: { children: ReactNode }) => {
     [authenticate, enqueueSnackbar, sendRegisterRequest, t]
   );
 
+  const logoff = useCallback(() => {
+    setUser(undefined);
+    setToken(undefined);
+    setRefreshToken(undefined);
+  }, [setRefreshToken, setToken, setUser]);
+
   return (
-    <AppContext.Provider value={{ user, authenticate, register, isAuthenticating, isRegistering }}>
+    <AppContext.Provider value={{ user, authenticate, register, logoff, isAuthenticating, isRegistering }}>
       {children}
     </AppContext.Provider>
   );
