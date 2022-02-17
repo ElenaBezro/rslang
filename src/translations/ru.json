@@ -2,7 +2,8 @@
   "HEADER": {
     "LOGIN": "Войти",
     "DICTIONARY": "Словарь",
-    "SPRINT": "Спринт"
+    "SPRINT": "Спринт",
+    "STATISTICS": "Статистика"
   },
   "HOME": {
     "TITLE": "Домашняя страница"

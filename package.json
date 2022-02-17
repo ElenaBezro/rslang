@@ -4,10 +4,10 @@
   "scripts": {
     "dev": "run-p -l -n restart:server dev:client",
     "dev:client": "vite",
+    "dev:server": "npm run start:dev --prefix server",
     "start": "npm run restart:server",
     "restart:server": "run-s stop:server start:server",
     "start:server": "npm start --prefix server",
-    "start:server:dev": "npm run start:dev --prefix server",
     "build": "run-p -l -n build:server build:client",
     "build:client": "tsc && vite build --base=app",
     "build:server": "npm install --prefix server",

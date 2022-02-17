@@ -1,18 +1,6 @@
-import { Dispatch, useRef } from 'react';
-import { SetStateAction, useCallback, useState } from 'react';
+import { Dispatch, useRef, SetStateAction, useCallback, useState } from 'react';
 
-const getLocalStorageValue = <T>(key: string, defaultValue: T) => {
-  const value = localStorage.getItem(key);
-  return value === null ? defaultValue : JSON.parse(value) as T;
-};
-
-const setLocalStorageValue = <T>(key: string, value: T) => {
-  if (value !== undefined) {
-    localStorage.setItem(key, JSON.stringify(value));
-  } else {
-    localStorage.removeItem(key);
-  }
-};
+import { getLocalStorageValue, setLocalStorageValue } from '~/utils/localStorage';
 
 const useLocalStorage = <T>(localStorageKey: string, initialValue: T) => {
   const [value, setValue] = useState<T>(() => getLocalStorageValue(localStorageKey, initialValue));

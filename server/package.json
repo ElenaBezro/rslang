@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node src/server.js",
     "stop": "node src/server.stop.js",
-    "start:dev": "nodemon src/server.js",
+    "start:dev": "nodemon --inspect src/server.js",
     "lint": "eslint ./ --ignore-path .gitignore --fix",
     "heroku-postbuild": "npm install --only=dev"
   },
