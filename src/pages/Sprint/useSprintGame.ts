@@ -92,7 +92,7 @@ const useSprintGame = ({ gameLength = 30 }: { gameLength?: number } = {}) => {
     }
   }, [gameState, group, startGame]);
 
-  return { gameState, question, selectGroup: setGroup, showNextQuestion };
+  return { gameState, question, group: group ?? undefined, selectGroup: setGroup, showNextQuestion };
 
 };
 

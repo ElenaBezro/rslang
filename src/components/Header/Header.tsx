@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ zIndex: 1000 }}>
       <Toolbar>
         <IconButton size="large" color="inherit" component={Link} to={PAGES.HOME} sx={{ mr: 2 }}>
           <HomeIcon />

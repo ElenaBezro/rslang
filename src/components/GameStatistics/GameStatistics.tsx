@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { Box, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Grid, Paper, Typography, useTheme } from '@mui/material';
 
 import { Word } from '~/types';
 
@@ -17,7 +17,7 @@ const WordSummary = ({ word }: { word: Word }) => (
 );
 
 const WordsBlock = ({ words, title, color }: { words: Word[]; title: string; color: string }) => (
-  <Box
+  <Paper
     sx={{
       borderColor: color,
       borderRadius: 2,
@@ -42,7 +42,7 @@ const WordsBlock = ({ words, title, color }: { words: Word[]; title: string; col
         <WordSummary key={word.id} word={word} />
       ))}
     </Grid>
-  </Box>
+  </Paper>
 );
 
 const GameStatistics = ({ statistics: { correctWords, incorrectWords } }: GameStatisticsProps) => {
