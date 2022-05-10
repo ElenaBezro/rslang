@@ -1,0 +1,61 @@
+{
+  "HEADER": {
+    "LOGIN": "Войти",
+    "DICTIONARY": "Словарь",
+    "SPRINT": "Спринт",
+    "STATISTICS": "Статистика"
+  },
+  "HOME": {
+    "TITLE": "Домашняя страница"
+  },
+  "DICTIONARY": {
+    "TITLE": "Словарь"
+  },
+  "AUTH": {
+    "TITLE": "Авторизация",
+    "EMAIL": "Электронная почта",
+    "PASSWORD": "Пароль",
+    "REGISTER_PROMPT": "Еще не зарегистрировались?",
+    "REGISTER": "Создайте аккаунт!"
+  },
+  "REGISTER": {
+    "TITLE": "Регистрация",
+    "EMAIL": "Электронная почта",
+    "NAME": "Имя",
+    "PASSWORD": "Пароль",
+    "MIN_PASSWORD_LENGTH": "Пароль должен содержать не менее 8 символов",
+    "AUTHENTICATE_PROMPT": "Уже зарегистрировались?",
+    "AUTHENTICATE": "Войти!"
+  },
+  "SPRINT": {
+    "TITLE": "Игра \"Спринт\""
+  },
+  "LEVEL_SELECTION": {
+    "SELECT_LEVEL": "Выберите уровень"
+  },
+  "GAME_STATISTICS": {
+    "CORRECT_WORDS": "Правильные ответы",
+    "INCORRECT_WORDS": "Неправильные ответы"
+  },
+  "COMMON": {
+    "IMAGE_NOT_FOUND": "Картинка не найдена :(",
+    "BUTTONS": {
+      "OK": "Ок",
+      "CANCEL": "Отмена",
+      "YES": "Да",
+      "NO": "Нет",
+      "REGISTER": "Зарегистрироваться",
+      "PLAY": "Проиграть",
+      "STOP": "Остановить",
+      "PLAY_AGAIN": "Сыграем еще разок?"
+    },
+    "FORMS": {
+      "FIELD_IS_REQUIRED": "Обязательное поле",
+      "INVALID_EMAIL": "Некорректный адрес"
+    }
+  },
+  "ERRORS": {
+    "AUTH_FAILED": "Ошибка авторизации: не удалось найти пользователя с заданным адресом электронной почты и паролем",
+    "REGISTER_FAILED": "Чиво то не получилось :("
+  }
+}
